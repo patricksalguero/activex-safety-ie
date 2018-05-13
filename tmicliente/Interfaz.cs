@@ -18,5 +18,11 @@ namespace transactor
 
         [DispId(3)]
         int CrearArchivo(string nombrearchivo, string data);
+
+        [DispId(4)]
+        int MostrarDialogo(string data);
+
+        [DispId(5)]
+        string RetornarNUDOCIDE(string log);
     }
 }

@@ -2,3 +2,5 @@ C:\Users\xt7226\Documents\Visual Studio 2010\Projects\tmicliente\tmicliente\bin\
 C:\Users\xt7226\Documents\Visual Studio 2010\Projects\tmicliente\tmicliente\bin\Debug\tmicliente.pdb
 C:\Users\xt7226\Documents\Visual Studio 2010\Projects\tmicliente\tmicliente\obj\Debug\tmicliente.dll
 C:\Users\xt7226\Documents\Visual Studio 2010\Projects\tmicliente\tmicliente\obj\Debug\tmicliente.pdb
+C:\Users\xt7226\Documents\Visual Studio 2010\Projects\tmicliente\tmicliente\obj\Debug\tmicliente.FrmDialogo.resources
+C:\Users\xt7226\Documents\Visual Studio 2010\Projects\tmicliente\tmicliente\obj\Debug\tmicliente.csproj.GenerateResource.Cache

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Runtime.InteropServices;
 using System.IO;
+using tmicliente;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace transactor
 {
@@ -81,7 +84,51 @@ namespace transactor
         }
         #endregion
 
-        
+
+
+
+        public int MostrarDialogo(string data)
+        {
+            var dialogo = new FrmDialogo();
+            dialogo.Show();
+            return 1;
+        }
+
+        #region [Proceso de Desencriptacion]
+        public string RetornarNUDOCIDE(string log)
+        {
+            DataSet ds = new DataSet();
+            SqlConnection c = new SqlConnection("Data Source=W7ITDATA01\\BDT;Initial Catalog=tm41tjtot;User ID=sa;password=transactor");
+            c.Open();
+            SqlCommand command = new SqlCommand("SELECT TxnDetail ,HubResp FROM  MainTxnJournal WHERE [NroOperacionHost]='" + log + "' ", c);
+            SqlDataReader sdr = command.ExecuteReader();
+
+            sdr.Read();
+
+            byte[] result = (byte[])sdr["TxnDetail"];
+
+            if (result != null || result.Length <= 0)
+            {
+                string result2 = Util.fConvertirString(result);
+
+                string[] arr = result2.Split('.');
+
+                string result3 = string.Empty;
+
+                for (var i = 0; i < arr.Length; i++)
+                {
+
+                    if (arr[i].Trim().StartsWith("NUDOCIDE"))
+                    {
+                        result3 = arr[i].Trim();
+                        break;
+                    }
+                }
+                return result3;
+            }
+            return "";
+        }
+        #endregion
     }
 }
 
